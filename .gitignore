@@ -1,9 +1,16 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # compiled output
+# /build
 /dist
 /tmp
 /out-tsc
+
+# compiled files
+*.css
+*.css.map
+*.min.css.map
+*.js.map
 
 # Runtime data
 pids
@@ -63,6 +70,7 @@ node_modules/
 jspm_packages/
 
 # Optional npm cache directory
+package-lock.json
 .npm
 
 # Optional eslint cache
@@ -89,3 +97,4 @@ lerna-debug.log
 # System Files
 .DS_Store
 Thumbs.db
+desktop.ini

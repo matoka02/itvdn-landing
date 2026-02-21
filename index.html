@@ -1,11 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Organic food</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Yellowtail&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./build/css/main.min.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container df justify-b align-c desktop-menu">
+        <div class="logo">
+          <img src="./assets/images/logo.webp" alt="Organic" />
+        </div>
+        <nav class="nav">
+          <ul class="df">
+            <li><a href="#" onclick="return false;">About</a></li>
+            <li><a href="#" onclick="return false;">Shop</a></li>
+            <li><a href="#" onclick="return false;">Projects</a></li>
+            <li><a href="#" onclick="return false;">News</a></li>
+          </ul>
+        </nav>
+        <div class="features df align-c">
+          <div class="search df align-c">
+            <input type="text" />
+            <button type="button">
+              <img src="./assets/images/search-icon.svg" alt="Search" />
+            </button>
+          </div>
+          <div class="cart df align-c">
+            <div class="cart-icon">
+              <img src="./assets/images/cart-icon.svg" alt="Cart" />
+            </div>
+            <p>Cart (<span>0</span>)</p>
+          </div>
+        </div>
+      </div>
+      <div class="container df justify-b align-c mobile-menu" >
+        <button
+          type="button"
+          class="burger df justify-c align-c"
+          id="toggle-burger-menu"
+        >
+          <img src="./assets/images/burger-icon.svg" alt="Open burger menu" class="burger-icon-open" />
+          <img
+            src="./assets/images/cross-icon.svg"
+            alt="Close burger menu"
+            class="burger-icon-close hidden"
+          />
+        </button>
+        <div class="logo">
+          <img src="./assets/images/logo.webp" alt="Organic" />
+        </div>
+        <div class="features df align-c">
+          <div class="search df align-c">
+            <input type="text" />
+            <button type="button" class="search-btn">
+              <img src="./assets/images/search-icon.svg" alt="Search" />
+            </button>
+          </div>
+        </div>
+        <nav class="nav" id="mobile-navigation">
+          <ul>
+            <li><a href="#" onclick="return false;">About</a></li>
+            <li><a href="#" onclick="return false;">Shop</a></li>
+            <li><a href="#" onclick="return false;">Projects</a></li>
+            <li><a href="#" onclick="return false;">News</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <script src="./build/js/app.min.js"></script>
+  </body>
 </html>
