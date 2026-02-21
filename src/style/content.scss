@@ -84,6 +84,8 @@
     background-repeat: no-repeat;
     border-radius: 30px;
 
+    @include responsive-banner(30px, 20px, 20px, 15px, 15px, 15px, 10px, 10px);
+
     &--1 {
       background-image: url(../../assets/images/sec-2-banner-1.webp);
       color: $white-color;
