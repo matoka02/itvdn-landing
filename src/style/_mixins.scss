@@ -1,3 +1,19 @@
+/**
+ * Responsive Design Mixins
+ * 
+ * A collection of SCSS mixins for responsive web design based on standard breakpoints.
+ * These mixins provide a consistent approach to handling different screen sizes
+ * throughout the application.
+ * - onLargeDesktop - Applies styles for screens up to 1600px wide.
+ * - onSmallDesktop - Applies styles for screens up to 1200px wide.
+ * - onLargeTablet - Applies styles for screens up to 980px wide.
+ * - onSmallTablet - Applies styles for screens up to 767px wide.
+ * - onMobile - Applies styles for screens up to 540px wide.
+ * 
+ * @module ResponsiveMixins
+ */
+
+
 @mixin onLargeDesktop {
   @media (max-width: 1600px) {
     @content;
@@ -25,5 +41,44 @@
 @mixin onMobile {
   @media (max-width: 540px) {
     @content;
+  }
+}
+
+/**
+* Mixin for responsive banners/cards
+* Used to scale padding and border-radius equally
+*
+* @param {Number} $large-desktop-padding - padding for 1600px (default 30px)
+* @param {Number} $large-desktop-radius - border-radius for 1600px (default 20px)
+* @param {Number} $small-desktop-padding - padding for 1200px (default 20px)
+* @param {Number} $small-desktop-radius - border-radius for 1200px (default 15px)
+*/
+
+@mixin responsive-banner($large-desktop-padding: 30px,
+  $large-desktop-radius: 20px,
+  $small-desktop-padding: 20px,
+  $small-desktop-radius: 15px,
+  $large-tablet-padding: 15px,
+  $large-tablet-radius: 15px,
+  $small-tablet-padding: 10px,
+  $small-tablet-radius: 10px) {
+  @include onLargeDesktop {
+    padding: $large-desktop-padding;
+    border-radius: $large-desktop-radius;
+  }
+
+  @include onSmallDesktop {
+    padding: $small-desktop-padding;
+    border-radius: $small-desktop-radius;
+  }
+
+  @include onLargeTablet {
+    padding: $large-tablet-padding;
+    border-radius: $large-tablet-radius;
+  }
+
+  @include onSmallTablet {
+    padding: $small-tablet-padding;
+    border-radius: $small-tablet-radius;
   }
 }
