@@ -179,6 +179,31 @@
   }
 }
 
+.sec-title {
+  font-size: 50px;
+  line-height: 104%;
+
+  @include onLargeDesktop {
+    font-size: 44px;
+  }
+
+  @include onSmallDesktop {
+    font-size: 38px;
+  }
+
+  @include onLargeTablet {
+    font-size: 32px;
+  }
+
+  @include onSmallTablet {
+    font-size: 24px;
+  }
+
+  @include onMobile {
+    font-size: 20px;
+  }
+}
+
 .vertical-paddings {
   padding: 150px 0;
 
