@@ -461,3 +461,258 @@
     }
   }
 }
+
+.sec-5 {
+  background-image: url(../../assets/images/sec-5-bg.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  h2,
+  h3 {
+    text-align: center;
+  }
+
+  h2 {
+    margin-bottom: 40px;
+  }
+
+  .sec5-cards {
+    width: 60%;
+    margin: 0 auto 150px;
+  }
+
+  .sec5-card {
+    span {
+      display: block;
+      text-align: center;
+
+      &.photo {
+        width: 115px;
+        aspect-ratio: 1 / 1;
+        margin: 0 auto 20px;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+
+      &.rating {
+        font-size: 30px;
+        font-weight: 700;
+        color: #FFA858;
+        margin-bottom: 25px;
+      }
+
+      &.description {
+        font-size: 18px;
+        line-height: 110%;
+        margin-bottom: 20px;
+      }
+
+      &.name {
+        font-size: 25px;
+        font-weight: 700;
+        margin-bottom: 5px;
+      }
+
+      &.role {
+        font-size: 15px;
+      }
+    }
+  }
+
+  .sec5-stats {
+    gap: 60px;
+
+    @include onLargeDesktop {
+      gap: 40px;
+    }
+
+    @include onSmallDesktop {
+      gap: 30px;
+    }
+
+    @include onLargeTablet {
+      gap: 20px;
+    }
+
+    @include onMobile {
+      gap: 5px;
+    }
+  }
+
+  .sec5-stats-block {
+    width: 210px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    background-color: #F1F1F1;
+    border: solid 2px #7EB693;
+
+
+    p {
+      text-align: center;
+      font-size: 18px;
+
+      strong {
+        font-size: 50px;
+      }
+    }
+  }
+
+  @include onLargeDesktop {
+    .sec5-stats {
+      gap: 40px;
+    }
+
+    .sec5-stats-block {
+      width: 170px;
+
+      p strong {
+        font-size: 40px;
+      }
+    }
+  }
+
+  @include onSmallDesktop {
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    .sec5-cards {
+      width: 70%;
+      margin-bottom: 100px;
+    }
+
+    .sec5-card {
+      span {
+        &.photo {
+          width: 100px;
+          margin-bottom: 10px;
+        }
+
+        &.rating {
+          font-size: 25px;
+          margin-bottom: 15px;
+        }
+
+        &.description {
+          font-size: 16px;
+        }
+
+        &.name {
+          font-size: 23px;
+        }
+      }
+    }
+
+    .sec5-stats {
+      gap: 30px;
+    }
+
+    .sec5-stats-block {
+      width: 150px;
+
+      p {
+        font-size: 16px;
+
+        strong {
+          font-size: 30px;
+        }
+      }
+    }
+  }
+
+  @include onLargeTablet {
+    .sec5-cards {
+      margin-bottom: 80px;
+    }
+
+    .sec5-stats {
+      gap: 20px;
+    }
+
+    .sec5-stats-block {
+      width: 120px;
+
+      p {
+        font-size: 13px;
+
+        strong {
+          font-size: 22px;
+        }
+      }
+    }
+  }
+
+  @include onSmallTablet {
+    .sec5-cards {
+      width: 95%;
+      margin-bottom: 60px;
+    }
+
+    .sec5-card {
+      span {
+        &.photo {
+          width: 80px;
+          margin-bottom: 5px;
+        }
+
+        &.rating {
+          font-size: 20px;
+          margin-bottom: 10px;
+        }
+
+        &.description {
+          font-size: 14px;
+          margin-bottom: 10px;
+        }
+
+        &.name {
+          font-size: 18px;
+        }
+      }
+    }
+
+    .sec5-stats-block {
+      width: 100px;
+
+      p {
+        font-size: 11px;
+
+        strong {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+
+  @include onMobile {
+    .sec5-card {
+      span {
+        &.photo {
+          margin-bottom: 3px;
+        }
+
+        &.rating {
+          font-size: 18px;
+          margin-bottom: 3px;
+        }
+
+        &.name {
+          margin-bottom: 0;
+        }
+
+        &.role {
+          font-size: 13px;
+        }
+      }
+    }
+
+    .sec5-stats {
+      gap: 5px;
+    }
+
+    .sec5-stats-block {
+      padding: 3px;
+    }
+  }
+}

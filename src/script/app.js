@@ -37,6 +37,27 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   /**
+   * Glide.js Slider Initialization
+   *
+   * Initializes a carousel slider for section 5 cards using the Glide.js library.
+   * This creates a simple, single-view carousel that allows users to navigate
+   * through cards one at a time.
+   *  Configuration:
+   * - type: 'carousel' - Creates a continuous looping carousel
+   * - startAt: 0 - Starts from the first slide (index 0)
+   * - perView: 1 - Shows only one slide at a time
+   *
+   * @module GlideSlider
+   * @requires Glide.js library (version 3.x)
+   */
+
+  new Glide(".sec5-cards", {
+    type: "carousel",
+    startAt: 0,
+    perView: 1,
+  }).mount();
+
+  /**
    * Product Cards "Load More/Load Less" Functionality
    *
    * This module handles dynamic loading and unloading of product cards
