@@ -1,0 +1,195 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.sec-1 {
+  background-image: url(../../assets/images/sec-1-bg.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 80vh;
+  min-height: max-content;
+
+  .sec-1__content {
+    h1 {
+      font-size: 70px;
+      line-height: 72px;
+      font-weight: 900;
+      margin-bottom: 25px;
+    }
+
+    a {
+      background-color: $accent-yellow-color;
+    }
+  }
+
+  @include onLargeDesktop {
+    .sec-1__content {
+      h1 {
+        font-size: 60px;
+        line-height: 62px;
+      }
+    }
+  }
+
+  @include onSmallDesktop {
+    .sec-1__content {
+      h1 {
+        font-size: 50px;
+        line-height: 52px;
+      }
+    }
+  }
+
+  @include onLargeTablet {
+    height: 70vh;
+
+    .sec-1__content {
+      h1 {
+        font-size: 40px;
+        line-height: 42px;
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  @include onSmallTablet {
+    .sec-1__content {
+      h1 {
+        font-size: 32px;
+        line-height: 34px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  @include onMobile {
+    height: 55vh;
+
+    .sec-1__content {
+      h1 {
+        font-size: 28px;
+        line-height: 30px;
+      }
+    }
+  }
+}
+
+.sec-2 {
+  .sec-2__banner {
+    width: 45%;
+    aspect-ratio: 1/0.5;
+    padding: 50px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 30px;
+
+    &--1 {
+      background-image: url(../../assets/images/sec-2-banner-1.webp);
+      color: $white-color;
+    }
+
+    &--2 {
+      background-image: url(../../assets/images/sec-2-banner-2.webp);
+    }
+
+    p {
+      font-size: 36px;
+      margin-bottom: 5px;
+    }
+
+    h3 {
+      font-size: 40px;
+      line-height: 42px;
+      font-weight: 900;
+    }
+  }
+
+  @include onLargeDesktop {
+    .sec-2__banner {
+      padding: 30px;
+      border-radius: 20px;
+
+      p {
+        font-size: 30px;
+      }
+
+      h3 {
+        font-size: 34px;
+        line-height: 36px;
+      }
+    }
+  }
+
+  @include onSmallDesktop {
+    .sec-2__banner {
+      padding: 20px;
+      border-radius: 15px;
+
+      p {
+        font-size: 24px;
+      }
+
+      h3 {
+        font-size: 30px;
+        line-height: 32px;
+      }
+    }
+  }
+
+  @include onLargeTablet {
+    .sec-2__banner {
+      padding: 15px;
+      border-radius: 15px;
+
+      p {
+        font-size: 20px;
+      }
+
+      h3 {
+        font-size: 24px;
+        line-height: 26px;
+      }
+    }
+  }
+
+  @include onSmallTablet {
+    .sec-2__banner {
+      padding: 10px;
+      border-radius: 10px;
+
+      p {
+        font-size: 16px;
+      }
+
+      h3 {
+        font-size: 20px;
+        line-height: 22px;
+      }
+    }
+  }
+
+  @include onMobile {
+    .sec-2__banner-wrapper {
+      flex-direction: column;
+    }
+
+    .sec-2__banner {
+      width: 90%;
+
+      &--1 {
+        margin-bottom: 15px;
+      }
+
+      p {
+        font-size: 12px;
+        margin-bottom: 3px;
+      }
+
+      h3 {
+        font-size: 16px;
+        line-height: 18px;
+      }
+    }
+  }
+}
