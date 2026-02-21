@@ -1,0 +1,56 @@
+@use 'mixins' as *;
+
+.df {
+  display: flex;
+}
+.fc {
+  flex-direction: column;
+}
+.fr {
+  flex-direction: row;
+}
+.justify-a {
+  justify-content: space-around;
+}
+.justify-b {
+  justify-content: space-between;
+}
+.justify-c {
+  justify-content: center;
+}
+.align-c {
+  align-items: center;
+}
+.align-s {
+  align-items: flex-start;
+}
+.align-e {
+  align-items: flex-end;
+}
+
+.container {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 160px;
+
+  @include onLargeDesktop {
+    padding: 0 100px;
+  }
+
+  @include onSmallDesktop {
+    padding: 0 50px;
+  }
+
+  @include onLargeTablet {
+    padding: 0 40px;
+  }
+
+  @include onSmallTablet {
+    padding: 0 30px;
+  }
+
+  @include onMobile {
+    padding: 0 15px;
+  }
+}
