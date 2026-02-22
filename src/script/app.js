@@ -58,6 +58,40 @@ document.addEventListener("DOMContentLoaded", function () {
   }).mount();
 
   /**
+   * Modal Windows Functionality
+   *
+   * Handles opening and closing of modal windows for section 8 cards.
+   * Supports multiple modals with a shared overlay wrapper.
+   *
+   * @module ModalManager
+   */
+
+  const btnIdsToOpenModal = ["sec-8-card-1-btn", "sec-8-card-2-btn"];
+  const generalModalWrapper = document.querySelector(".modals-wrapper");
+  const closeModalBtns = document.querySelectorAll(".modal-close-btn");
+
+  btnIdsToOpenModal.forEach((btnId) => {
+    const btnEl = document.getElementById(btnId);
+    const modalId = btnEl.getAttribute("data-modal-id");
+    const modalEl = document.getElementById(modalId);
+
+    btnEl.addEventListener("click", function () {
+      generalModalWrapper.classList.add("visible");
+      modalEl.classList.add("visible");
+      document.querySelector("body").classList.add("overflow");
+    });
+  });
+
+  closeModalBtns.forEach((closeBtn) => {
+    closeBtn.addEventListener("click", function () {
+      generalModalWrapper.classList.remove("visible");
+      this.parentElement.classList.remove("visible");
+      document.querySelector("body").classList.remove("overflow");
+    });
+  });
+
+  
+  /**
    * Product Cards "Load More/Load Less" Functionality
    *
    * This module handles dynamic loading and unloading of product cards
