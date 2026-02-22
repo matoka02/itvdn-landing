@@ -4,6 +4,14 @@
 header {
   padding: 60px 0;
 
+  position: sticky;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  z-index: 100;
+  background-color: $white-color;
+  box-shadow: 0 2px rgba(0, 0, 0, 0.1);
+
   .mobile-menu {
     display: none;
   }
