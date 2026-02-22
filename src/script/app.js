@@ -90,7 +90,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  
   /**
    * Product Cards "Load More/Load Less" Functionality
    *
@@ -175,6 +174,54 @@ document.addEventListener("DOMContentLoaded", function () {
       showCards();
     } else {
       hideCards();
+    }
+  });
+
+  /**
+   * Email Subscription Form Handler
+   *
+   * Handles email validation and submission using EmailJS service.
+   * Provides real-time email validation and sends subscription requests.
+   *
+   * @module EmailSubscription
+   * @requires EmailJS - External library for sending emails without backend
+   */
+
+  EMAILJS_CONFIG = {
+    publicKey: "56BO6Zme_zNZzgKSI",
+    serviceId: "service_3vvgccg",
+    templateId: "template_1ej5jmb",
+  };
+
+  function isEmailValid(value) {
+    const emailValidateRegExp =
+      /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
+
+    return emailValidateRegExp.test(value);
+  }
+
+  (function () {
+    emailjs.init({
+      publicKey: EMAILJS_CONFIG.publicKey,
+    });
+  })();
+
+  const formBtn = document.getElementById("form-submit");
+  const emailField = document.getElementById("email-input");
+
+  formBtn.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    const currentEmail = emailField.value;
+    const isCurrentEmailValid = isEmailValid(currentEmail);
+
+    if (isCurrentEmailValid) {
+      emailjs.send(EMAILJS_CONFIG.serviceId, EMAILJS_CONFIG.templateId, {
+        user_email: currentEmail,
+      });
+      emailField.value = ""; //clear form after submiting
+    } else {
+      console.log("Please type correct email address!");
     }
   });
 });

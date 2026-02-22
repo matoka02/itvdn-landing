@@ -1158,3 +1158,160 @@
     }
   }
 }
+
+.sec-9 {
+  .sec-9-content {
+    width: 100%;
+    aspect-ratio: 1 / 0.2;
+    padding: 0 70px;
+    background-image: url(../../assets/images/sec-9-bg.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 30px;
+
+    h2 {
+      color: $white-color;
+    }
+
+    form {
+      gap: 10px;
+
+      input,
+      button {
+        font-size: 20px;
+        border-radius: 16px;
+        padding: 25px;
+      }
+
+      input {
+        width: 370px;
+        border: solid 1px $white-color;
+        font-style: italic;
+        outline: none;
+
+        &:focus {
+          border-color: $text-color;
+        }
+      }
+
+      button {
+        width: 220px;
+        text-align: center;
+        font-weight: 700;
+        color: $white-color;
+        background-color: $text-color;
+        border: solid 1px $text-color;
+      }
+    }
+  }
+
+  @include onLargeDesktop {
+    .sec-9-content {
+      padding: 0 25px;
+      border-radius: 20px;
+
+      h2 {
+        width: 45%;
+      }
+
+      form {
+
+        input,
+        button {
+          font-size: 18px;
+          padding: 20px;
+          border-radius: 12px;
+        }
+
+        button {
+          width: 190px;
+        }
+      }
+    }
+  }
+
+  @include onSmallDesktop {
+    .sec-9-content {
+      form {
+
+        input,
+        button {
+          padding: 15px;
+        }
+
+        input {
+          width: 270px;
+        }
+      }
+    }
+  }
+
+  @include onLargeTablet {
+    .sec-9-content {
+      padding: 0 15px;
+      border-radius: 15px;
+
+      form {
+        gap: 5px;
+
+        input,
+        button {
+          font-size: 15px;
+          padding: 10px;
+          border-radius: 8px;
+        }
+
+        input {
+          width: 235px;
+        }
+
+        button {
+          width: 140px;
+        }
+      }
+    }
+  }
+
+  @include onSmallTablet {
+    .sec-9-content {
+      flex-direction: column;
+      justify-content: center;
+      gap: 15px;
+      aspect-ratio: unset;
+      height: max-content;
+      padding: 10px 10px 15px;
+      border-radius: 10px;
+
+      h2 {
+        width: 100%;
+        text-align: center;
+      }
+
+      form {
+        width: 100%;
+
+        input,
+        button {
+          font-size: 13px;
+          padding: 7px;
+          border-radius: 5px;
+        }
+
+        input {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  @include onMobile {
+    .sec-9-content {
+      form {
+        button {
+          width: max-content;
+        }
+      }
+    }
+  }
+}
