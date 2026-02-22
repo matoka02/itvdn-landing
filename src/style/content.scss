@@ -900,3 +900,418 @@
     }
   }
 }
+
+.sec-8 {
+  h2 {
+    margin-bottom: 45px;
+  }
+
+  .sec-8-card {
+    width: 49%;
+    padding: 40px 35px 0;
+    aspect-ratio: 1 / 0.7;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 30px;
+
+    &:first-child {
+      background-image: url(../../assets/images/sec-8-card-bg-1.png);
+    }
+
+    &:last-child {
+      background-image: url(../../assets/images/sec-8-card-bg-2.png);
+    }
+
+    p.date {
+      width: 80px;
+      aspect-ratio: 1 / 1;
+      padding: 3px;
+      font-size: 24px;
+      font-weight: 700;
+      text-align: center;
+      background-color: $white-color;
+      border-radius: 50%;
+    }
+
+    .content {
+      position: relative;
+      top: 45px;
+      padding: 45px 50px;
+      background-color: $white-color;
+      border-radius: 30px;
+      -webkit-box-shadow: 0px 20px 35px 0px rgba(167, 167, 167, 0.25);
+      -moz-box-shadow: 0px 20px 35px 0px rgba(167, 167, 167, 0.25);
+      box-shadow: 0px 20px 35px 0px rgba(167, 167, 167, 0.25);
+
+      p {
+
+        &.author,
+        &.preview {
+          font-size: 18px;
+          line-height: 110%;
+        }
+
+        &.author {
+          position: relative;
+          padding-left: 25px;
+          margin-bottom: 15px;
+
+          &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            width: 20px;
+            aspect-ratio: 1 / 1;
+            background-image: url(../../assets/images/men-icon.svg);
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+          }
+        }
+
+        &.preview {
+          margin-bottom: 20px;
+        }
+      }
+
+      h4 {
+        font-size: 25px;
+        font-weight: 900;
+        margin-bottom: 5px;
+      }
+
+      button {
+        background-color: $accent-yellow-color;
+      }
+    }
+  }
+
+  @include onLargeDesktop {
+    h2 {
+      margin-bottom: 35px;
+    }
+
+    .sec-8-card {
+      p.date {
+        font-size: 21px;
+        width: 70px;
+      }
+
+      .content {
+        padding: 35px 40px;
+        top: 35px;
+      }
+    }
+  }
+
+  @include onSmallDesktop {
+    h2 {
+      margin-bottom: 25px;
+    }
+
+    .sec-8-card {
+      padding: 30px 25px 0;
+      border-radius: 20px;
+
+      p.date {
+        font-size: 15px;
+        width: 50px;
+      }
+
+      .content {
+        padding: 25px 30px;
+        top: 25px;
+        border-radius: 20px;
+
+        p {
+
+          &.author,
+          &.preview {
+            font-size: 15px;
+          }
+
+          &.author {
+            padding-left: 20px;
+
+            &::before {
+              width: 15px;
+            }
+          }
+        }
+
+        h4 {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+
+  @include onLargeTablet {
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    .sec-8-card {
+      padding: 20px 15px 0;
+      border-radius: 15px;
+
+      p.date {
+        font-size: 13px;
+        width: 45px;
+      }
+
+      .content {
+        padding: 15px;
+        top: 15px;
+        border-radius: 15px;
+
+        p {
+
+          &.author,
+          &.preview {
+            font-size: 13px;
+            margin-bottom: 10px;
+          }
+
+          &.author {
+            padding-left: 15px;
+
+            &::before {
+              width: 11px;
+            }
+          }
+        }
+
+        h4 {
+          font-size: 18px;
+          margin-bottom: 2px;
+        }
+      }
+    }
+  }
+
+  @include onSmallTablet {
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    .sec-8-cards {
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .sec-8-card {
+      width: 100%;
+      aspect-ratio: unset;
+      height: max-content;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 15px;
+      padding: 15px;
+      border-radius: 10px;
+
+      p.date {
+        font-size: 11px;
+        width: 40px;
+        min-width: 40px;
+      }
+
+      .content {
+        padding: 10px;
+        top: 0;
+        border-radius: 10px;
+
+        p {
+
+          &.author,
+          &.preview {
+            font-size: 11px;
+          }
+        }
+
+        h4 {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  @include onMobile {
+    .sec-8-cards {
+      gap: 7px;
+    }
+
+    .sec-8-card {
+      padding: 10px;
+      gap: 5px;
+
+      .content {
+        font-size: 9px;
+
+        h4 {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+.sec-9 {
+  .sec-9-content {
+    width: 100%;
+    aspect-ratio: 1 / 0.2;
+    padding: 0 70px;
+    background-image: url(../../assets/images/sec-9-bg.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 30px;
+
+    h2 {
+      color: $white-color;
+    }
+
+    form {
+      gap: 10px;
+
+      input,
+      button {
+        font-size: 20px;
+        border-radius: 16px;
+        padding: 25px;
+      }
+
+      input {
+        width: 370px;
+        border: solid 1px $white-color;
+        font-style: italic;
+        outline: none;
+
+        &:focus {
+          border-color: $text-color;
+        }
+      }
+
+      button {
+        width: 220px;
+        text-align: center;
+        font-weight: 700;
+        color: $white-color;
+        background-color: $text-color;
+        border: solid 1px $text-color;
+      }
+    }
+  }
+
+  @include onLargeDesktop {
+    .sec-9-content {
+      padding: 0 25px;
+      border-radius: 20px;
+
+      h2 {
+        width: 45%;
+      }
+
+      form {
+
+        input,
+        button {
+          font-size: 18px;
+          padding: 20px;
+          border-radius: 12px;
+        }
+
+        button {
+          width: 190px;
+        }
+      }
+    }
+  }
+
+  @include onSmallDesktop {
+    .sec-9-content {
+      form {
+
+        input,
+        button {
+          padding: 15px;
+        }
+
+        input {
+          width: 270px;
+        }
+      }
+    }
+  }
+
+  @include onLargeTablet {
+    .sec-9-content {
+      padding: 0 15px;
+      border-radius: 15px;
+
+      form {
+        gap: 5px;
+
+        input,
+        button {
+          font-size: 15px;
+          padding: 10px;
+          border-radius: 8px;
+        }
+
+        input {
+          width: 235px;
+        }
+
+        button {
+          width: 140px;
+        }
+      }
+    }
+  }
+
+  @include onSmallTablet {
+    .sec-9-content {
+      flex-direction: column;
+      justify-content: center;
+      gap: 15px;
+      aspect-ratio: unset;
+      height: max-content;
+      padding: 10px 10px 15px;
+      border-radius: 10px;
+
+      h2 {
+        width: 100%;
+        text-align: center;
+      }
+
+      form {
+        width: 100%;
+
+        input,
+        button {
+          font-size: 13px;
+          padding: 7px;
+          border-radius: 5px;
+        }
+
+        input {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  @include onMobile {
+    .sec-9-content {
+      form {
+        button {
+          width: max-content;
+        }
+      }
+    }
+  }
+}
