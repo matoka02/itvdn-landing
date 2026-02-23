@@ -47,7 +47,7 @@
             <img src="./assets/images/search-icon.svg" alt="Search" />
           </button>
         </div>
-        <div class="cart df align-c">
+        <div class="cart df align-c" id="cart-modal-btn" data-modal-id="cart-modal">
           <div class="cart-icon">
             <img src="./assets/images/cart-icon.svg" alt="Cart" />
           </div>
@@ -402,6 +402,13 @@
             <strong>Promote healthy digestion:</strong> the fiber in tomatoes can aid in digestion and prevent
             constipation.
           </p>
+        </div>
+      </article>
+      <article class="modal" id="cart-modal">
+        <button class="modal-close-btn"><span></span><span></span></button>
+        <div class="modal-content">
+          <h3>The contents of your shopping cart</h3>
+          <ul></ul>
         </div>
       </article>
     </section>

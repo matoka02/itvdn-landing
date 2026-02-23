@@ -260,7 +260,11 @@ document.addEventListener("DOMContentLoaded", function () {
    * @module ModalManager
    */
 
-  const btnIdsToOpenModal = ["sec-8-card-1-btn", "sec-8-card-2-btn"];
+  const btnIdsToOpenModal = [
+    "sec-8-card-1-btn",
+    "sec-8-card-2-btn",
+    "cart-modal-btn",
+  ];
   const generalModalWrapper = document.querySelector(".modals-wrapper");
   const closeModalBtns = document.querySelectorAll(".modal-close-btn");
 
@@ -273,6 +277,10 @@ document.addEventListener("DOMContentLoaded", function () {
       generalModalWrapper.classList.add("visible");
       modalEl.classList.add("visible");
       document.querySelector("body").classList.add("overflow");
+
+      if (modalId === "cart-modal") {
+        displaySelectedProducts();
+      }
     });
   });
 
@@ -417,5 +425,96 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       console.log("Please type correct email address!");
     }
+  });
+
+  /**
+   * Shopping Cart Management Module
+   *
+   * Handles the shopping cart functionality including:
+   * - Adding/removing products to/from cart
+   * - Persisting cart state in localStorage
+   * - Updating cart UI indicators (counters and button states)
+   * - Managing cart modal display with selected products list
+   *
+   * @module ShoppingCart
+   * @requires productInfo - Global array of product objects (must be defined)
+   */
+
+  let selectedProducts =
+    JSON.parse(localStorage.getItem("selectedProducts")) || [];
+  const allBuyButtons = document.querySelectorAll(".product-card .buy");
+
+  function updateCartValueIndicators() {
+    const allSelectedProducts =
+      JSON.parse(localStorage.getItem("selectedProducts")) || [];
+    const cartCountElement = document.querySelector(
+      "header .features .cart p span",
+    );
+    cartCountElement.textContent = allSelectedProducts.length;
+
+    allBuyButtons.forEach((buyBtn) => {
+      const productId = buyBtn.parentElement.getAttribute("data-product-id");
+      buyBtn.classList.toggle(
+        "active",
+        allSelectedProducts.includes(productId),
+      );
+    });
+  }
+
+  function handleBuyButtonClick(event) {
+    event.preventDefault();
+
+    const productId = this.parentElement.getAttribute("data-product-id");
+    this.classList.toggle("active");
+
+    if (this.classList.contains("active")) {
+      selectedProducts.push(productId);
+    } else {
+      selectedProducts = selectedProducts.filter((id) => id !== productId);
+    }
+
+    localStorage.setItem("selectedProducts", JSON.stringify(selectedProducts));
+    updateCartValueIndicators();
+  }
+
+  function displaySelectedProducts() {
+    const productList = document.querySelector("#cart-modal ul");
+    productList.innerHTML = selectedProducts
+      .map((productId) => {
+        const productName = getProductNameById(productId);
+        return `
+        <li data-product-id="${productId}">
+          <span>${productName}</span>
+          <i class="fa-regular fa-circle-xmark fa-lg" style="color: #274c5b;"></i>
+        </li>
+      `;
+      })
+      .join("");
+
+    selectedProducts.forEach((productId) => {
+      const listItem = productList.querySelector(
+        `li[data-product-id="${productId}"]`,
+      );
+      listItem.addEventListener("click", () =>
+        removeProductFromList(productId),
+      );
+    });
+  }
+
+  function getProductNameById(productId) {
+    const product = productInfo.find((p) => p.id == productId);
+    return product ? product.title : "Unknown Product";
+  }
+
+  function removeProductFromList(productId) {
+    selectedProducts = selectedProducts.filter((id) => id !== productId);
+    localStorage.setItem("selectedProducts", JSON.stringify(selectedProducts));
+    updateCartValueIndicators();
+    displaySelectedProducts();
+  }
+
+  updateCartValueIndicators();
+  allBuyButtons.forEach((buyBtn) => {
+    buyBtn.addEventListener("click", handleBuyButtonClick);
   });
 });
