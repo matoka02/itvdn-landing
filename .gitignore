@@ -7,9 +7,12 @@
 /out-tsc
 
 # compiled files
+*.css
 *.css.map
 *.min.css.map
+*.js
 *.js.map
+*.min.js.map
 
 # Runtime data
 pids

@@ -1,4 +1,198 @@
+const productInfo = [
+  {
+    id: 1,
+    category: "Vegetable",
+    imgSrc: "./assets/images/product-photo-1.png",
+    title: "Calabrese Broccoli",
+    price: "$20.00",
+    discountPrice: "$13.00",
+    rating: 4.7,
+  },
+  {
+    id: 2,
+    category: "Fresh",
+    imgSrc: "./assets/images/product-photo-2.png",
+    title: "Fresh Banana Fruits",
+    price: "$20.00",
+    discountPrice: "$14.00",
+    rating: 5,
+  },
+  {
+    id: 3,
+    category: "Millets",
+    imgSrc: "./assets/images/product-photo-3.png",
+    title: "White Nuts",
+    price: "$20.00",
+    discountPrice: "$15.00",
+    rating: 4.5,
+  },
+  {
+    id: 4,
+    category: "Vegetable",
+    imgSrc: "./assets/images/product-photo-4.png",
+    title: "Vegan Red Tomato",
+    price: "$20.00",
+    discountPrice: "$17.00",
+    rating: 4,
+  },
+  {
+    id: 5,
+    category: "Health",
+    imgSrc: "./assets/images/product-photo-5.png",
+    title: "Mung Bean",
+    price: "$20.00",
+    discountPrice: "$11.00",
+    rating: 3.3,
+  },
+  {
+    id: 6,
+    category: "Nuts",
+    imgSrc: "./assets/images/product-photo-6.png",
+    title: "Brown Hazelnut",
+    price: "$20.00",
+    discountPrice: "$12.00",
+    rating: 4.6,
+  },
+  {
+    id: 7,
+    category: "Fresh",
+    imgSrc: "./assets/images/product-photo-7.png",
+    title: "Eggs",
+    price: "$20.00",
+    discountPrice: "$17.00",
+    rating: 4.3,
+  },
+  {
+    id: 8,
+    category: "Fresh",
+    imgSrc: "./assets/images/product-photo-8.png",
+    title: "Zelco Suji Elaichi Rusk",
+    price: "$20.00",
+    discountPrice: "$15.00",
+    rating: 4.7,
+  },
+  {
+    id: 9,
+    category: "Fruit",
+    imgSrc: "./assets/images/product-photo-9.png",
+    title: "Organic Apples",
+    price: "$25.00",
+    discountPrice: "$20.00",
+    rating: 4.9,
+  },
+  {
+    id: 10,
+    category: "Dairy",
+    imgSrc: "./assets/images/product-photo-10.png",
+    title: "Greek Yogurt",
+    price: "$15.00",
+    discountPrice: "$10.00",
+    rating: 4.8,
+  },
+  {
+    id: 11,
+    category: "Vegetable",
+    imgSrc: "./assets/images/product-photo-11.png",
+    title: "Fresh Spinach",
+    price: "$18.00",
+    discountPrice: "$12.00",
+    rating: 4.6,
+  },
+  {
+    id: 12,
+    category: "Grains",
+    imgSrc: "./assets/images/product-photo-12.png",
+    title: "Brown Rice",
+    price: "$22.00",
+    discountPrice: "$16.00",
+    rating: 4.4,
+  },
+  {
+    id: 13,
+    category: "Herbs",
+    imgSrc: "./assets/images/product-photo-13.png",
+    title: "Fresh Basil",
+    price: "$10.00",
+    discountPrice: "$8.00",
+    rating: 4.7,
+  },
+  {
+    id: 14,
+    category: "Snack",
+    imgSrc: "./assets/images/product-photo-14.png",
+    title: "Trail Mix",
+    price: "$18.00",
+    discountPrice: "$14.00",
+    rating: 4.5,
+  },
+  {
+    id: 15,
+    category: "Beverage",
+    imgSrc: "./assets/images/product-photo-15.png",
+    title: "Green Tea",
+    price: "$12.00",
+    discountPrice: "$9.00",
+    rating: 4.8,
+  },
+  {
+    id: 16,
+    category: "Frozen",
+    imgSrc: "./assets/images/product-photo-16.png",
+    title: "Frozen Berries",
+    price: "$15.00",
+    discountPrice: "$11.00",
+    rating: 4.6,
+  },
+];
+
 document.addEventListener("DOMContentLoaded", function () {
+  /**
+   * Product Cards Rendering Module
+   *
+   * Dynamically generates and renders product cards across multiple sections
+   * of the page using product data arrays.
+   *
+   * @module ProductCardsRenderer
+   */
+
+  const mainProductContainer = document.querySelector(".sec-4-cards");
+  const anotherProductContainer = document.querySelector(".sec-6-cards");
+
+  function createProductCard(product, classOfSection) {
+    const activeRatingWidth = (product.rating * 100) / 5;
+    return `
+      <div class="sec-${classOfSection}-card product-card" data-product-id="${product.id}">
+        <p class="badge">${product.category}</p>
+        <div class="photo">
+          <img src="${product.imgSrc}">
+        </div>
+        <p class="title">${product.title}</p>
+        <div class="info df align-e justify-b">
+          <p class="price">
+            <span class="full">${product.price}</span>
+            <span class="discount">${product.discountPrice}</span>
+          </p>
+          <div class="rating">
+            <span class="default">★★★★★</span>
+            <span class="active" style="width: ${activeRatingWidth}%">★★★★★</span>
+          </div>
+        </div>
+        <a href="#" onclick="return false;" class="buy">Add to cart</a>
+      </div>
+    `;
+  }
+
+  function renderProducts(productContainer, products, classOfSection) {
+    products.forEach((product) => {
+      const productCard = createProductCard(product, classOfSection);
+
+      productContainer.innerHTML += productCard;
+    });
+  }
+
+  renderProducts(mainProductContainer, productInfo, 4);
+  renderProducts(anotherProductContainer, productInfo.slice(5, 9), 6);
+
   /**
    * Header Navigation and Mobile Menu Functionality
    *
