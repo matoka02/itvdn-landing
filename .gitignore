@@ -7,7 +7,6 @@
 /out-tsc
 
 # compiled files
-*.css
 *.css.map
 *.min.css.map
 *.js
