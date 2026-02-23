@@ -112,6 +112,15 @@
       background-color: transparent;
       color: $text-color;
     }
+
+    &.active {
+      background-color: transparent;
+      color: $text-color;
+
+      &:hover {
+        transform: scale(0.95);
+      }
+    }
   }
 
   @include onLargeTablet {

@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Organic food</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -22,6 +23,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.6.0/css/glide.theme.css"
     integrity="sha512-rF+FkLhdJu8p6NNoi0y30W5xPessa8yC8/3u3p5/biTeDpsxik1XfrgfqZG/mUmJ/2cA73nArDuWnX2JQLvlmw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/awesome-notifications/3.1.3/style.min.css"
+    integrity="sha512-OTW82wYvOeYGbTBnbaHnV8fiF62MbNsY+wcYvqMGANrdRAKA9U4heJkje6I0vtNNvdbic8IiKEJVzS3LH5jyQw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="./build/css/main.min.css" />
 </head>
 
@@ -33,10 +37,10 @@
       </div>
       <nav class="nav">
         <ul class="df">
-          <li><a href="#" onclick="return false;">About</a></li>
-          <li><a href="#" onclick="return false;">Shop</a></li>
-          <li><a href="#" onclick="return false;">Projects</a></li>
-          <li><a href="#" onclick="return false;">News</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#shop">Shop</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#news">News</a></li>
         </ul>
       </nav>
       <div class="features df align-c">
@@ -46,7 +50,7 @@
             <img src="./assets/images/search-icon.svg" alt="Search" />
           </button>
         </div>
-        <div class="cart df align-c">
+        <div class="cart df align-c" id="cart-modal-btn" data-modal-id="cart-modal">
           <div class="cart-icon">
             <img src="./assets/images/cart-icon.svg" alt="Cart" />
           </div>
@@ -82,7 +86,7 @@
   </header>
 
   <main>
-    <section class="sec-1 df fc justify-c">
+    <section class="sec-1 df fc justify-c" id="about">
       <div class="container">
         <article class="sec-1__content">
           <h2 class="yellowtail-text green-text sec-subtitle">
@@ -147,13 +151,13 @@
       </div>
     </section>
 
-    <section class="sec-4 vertical-paddings">
+    <section class="sec-4 vertical-paddings" id="shop">
       <div class="container">
         <h3 class="yellowtail-text green-text sec-subtitle">Categories</h3>
         <h2 class="sec-title">Our Products</h2>
         <div class="sec-4-cards product-cards">
 
-          <div class="sec-4-card product-card">
+          <!-- <div class="sec-4-card product-card">
             <p class="badge">Vegetable</p>
             <div class="photo">
               <img src="./assets/images/product-photo-1.png">
@@ -170,278 +174,8 @@
               </div>
             </div>
             <a href="#" onclick="return false;" class="buy">Add to cart</a>
-          </div>
+          </div> -->
 
-          <div class="sec-4-card product-card">
-            <p class="badge">Vegetable</p>
-            <div class="photo">
-              <img src="./assets/images/product-photo-1.png">
-            </div>
-            <p class="title">Calabrese Broccoli</p>
-            <div class="info df align-e justify-b">
-              <p class="price">
-                <span class="full">$20.00</span>
-                <span class="discount">$13.00</span>
-              </p>
-              <div class="rating">
-                <span class="default">★★★★★</span>
-                <span class="active">★★★★★</span>
-              </div>
-            </div>
-            <a href="#" onclick="return false;" class="buy">Add to cart</a>
-          </div>
-          <div class="sec-4-card product-card">
-            <p class="badge">Vegetable</p>
-            <div class="photo">
-              <img src="./assets/images/product-photo-1.png">
-            </div>
-            <p class="title">Calabrese Broccoli</p>
-            <div class="info df align-e justify-b">
-              <p class="price">
-                <span class="full">$20.00</span>
-                <span class="discount">$13.00</span>
-              </p>
-              <div class="rating">
-                <span class="default">★★★★★</span>
-                <span class="active">★★★★★</span>
-              </div>
-            </div>
-            <a href="#" onclick="return false;" class="buy">Add to cart</a>
-          </div>
-          <div class="sec-4-card product-card">
-            <p class="badge">Vegetable</p>
-            <div class="photo">
-              <img src="./assets/images/product-photo-1.png">
-            </div>
-            <p class="title">Calabrese Broccoli</p>
-            <div class="info df align-e justify-b">
-              <p class="price">
-                <span class="full">$20.00</span>
-                <span class="discount">$13.00</span>
-              </p>
-              <div class="rating">
-                <span class="default">★★★★★</span>
-                <span class="active">★★★★★</span>
-              </div>
-            </div>
-            <a href="#" onclick="return false;" class="buy">Add to cart</a>
-          </div>
-          <div class="sec-4-card product-card">
-            <p class="badge">Vegetable</p>
-            <div class="photo">
-              <img src="./assets/images/product-photo-1.png">
-            </div>
-            <p class="title">Calabrese Broccoli</p>
-            <div class="info df align-e justify-b">
-              <p class="price">
-                <span class="full">$20.00</span>
-                <span class="discount">$13.00</span>
-              </p>
-              <div class="rating">
-                <span class="default">★★★★★</span>
-                <span class="active">★★★★★</span>
-              </div>
-            </div>
-            <a href="#" onclick="return false;" class="buy">Add to cart</a>
-          </div>
-          <div class="sec-4-card product-card">
-            <p class="badge">Vegetable</p>
-            <div class="photo">
-              <img src="./assets/images/product-photo-1.png">
-            </div>
-            <p class="title">Calabrese Broccoli</p>
-            <div class="info df align-e justify-b">
-              <p class="price">
-                <span class="full">$20.00</span>
-                <span class="discount">$13.00</span>
-              </p>
-              <div class="rating">
-                <span class="default">★★★★★</span>
-                <span class="active">★★★★★</span>
-              </div>
-            </div>
-            <a href="#" onclick="return false;" class="buy">Add to cart</a>
-          </div>
-          <div class="sec-4-card product-card">
-            <p class="badge">Vegetable</p>
-            <div class="photo">
-              <img src="./assets/images/product-photo-1.png">
-            </div>
-            <p class="title">Calabrese Broccoli</p>
-            <div class="info df align-e justify-b">
-              <p class="price">
-                <span class="full">$20.00</span>
-                <span class="discount">$13.00</span>
-              </p>
-              <div class="rating">
-                <span class="default">★★★★★</span>
-                <span class="active">★★★★★</span>
-              </div>
-            </div>
-            <a href="#" onclick="return false;" class="buy">Add to cart</a>
-          </div>
-          <div class="sec-4-card product-card">
-            <p class="badge">Vegetable</p>
-            <div class="photo">
-              <img src="./assets/images/product-photo-1.png">
-            </div>
-            <p class="title">Calabrese Broccoli</p>
-            <div class="info df align-e justify-b">
-              <p class="price">
-                <span class="full">$20.00</span>
-                <span class="discount">$13.00</span>
-              </p>
-              <div class="rating">
-                <span class="default">★★★★★</span>
-                <span class="active">★★★★★</span>
-              </div>
-            </div>
-            <a href="#" onclick="return false;" class="buy">Add to cart</a>
-          </div>
-          <div class="sec-4-card product-card">
-            <p class="badge">Vegetable</p>
-            <div class="photo">
-              <img src="./assets/images/product-photo-1.png">
-            </div>
-            <p class="title">Calabrese Broccoli</p>
-            <div class="info df align-e justify-b">
-              <p class="price">
-                <span class="full">$20.00</span>
-                <span class="discount">$13.00</span>
-              </p>
-              <div class="rating">
-                <span class="default">★★★★★</span>
-                <span class="active">★★★★★</span>
-              </div>
-            </div>
-            <a href="#" onclick="return false;" class="buy">Add to cart</a>
-          </div>
-          <div class="sec-4-card product-card">
-            <p class="badge">Vegetable</p>
-            <div class="photo">
-              <img src="./assets/images/product-photo-1.png">
-            </div>
-            <p class="title">Calabrese Broccoli</p>
-            <div class="info df align-e justify-b">
-              <p class="price">
-                <span class="full">$20.00</span>
-                <span class="discount">$13.00</span>
-              </p>
-              <div class="rating">
-                <span class="default">★★★★★</span>
-                <span class="active">★★★★★</span>
-              </div>
-            </div>
-            <a href="#" onclick="return false;" class="buy">Add to cart</a>
-          </div>
-          <div class="sec-4-card product-card">
-            <p class="badge">Vegetable</p>
-            <div class="photo">
-              <img src="./assets/images/product-photo-1.png">
-            </div>
-            <p class="title">Calabrese Broccoli</p>
-            <div class="info df align-e justify-b">
-              <p class="price">
-                <span class="full">$20.00</span>
-                <span class="discount">$13.00</span>
-              </p>
-              <div class="rating">
-                <span class="default">★★★★★</span>
-                <span class="active">★★★★★</span>
-              </div>
-            </div>
-            <a href="#" onclick="return false;" class="buy">Add to cart</a>
-          </div>
-          <div class="sec-4-card product-card">
-            <p class="badge">Vegetable</p>
-            <div class="photo">
-              <img src="./assets/images/product-photo-1.png">
-            </div>
-            <p class="title">Calabrese Broccoli</p>
-            <div class="info df align-e justify-b">
-              <p class="price">
-                <span class="full">$20.00</span>
-                <span class="discount">$13.00</span>
-              </p>
-              <div class="rating">
-                <span class="default">★★★★★</span>
-                <span class="active">★★★★★</span>
-              </div>
-            </div>
-            <a href="#" onclick="return false;" class="buy">Add to cart</a>
-          </div>
-          <div class="sec-4-card product-card">
-            <p class="badge">Vegetable</p>
-            <div class="photo">
-              <img src="./assets/images/product-photo-1.png">
-            </div>
-            <p class="title">Calabrese Broccoli</p>
-            <div class="info df align-e justify-b">
-              <p class="price">
-                <span class="full">$20.00</span>
-                <span class="discount">$13.00</span>
-              </p>
-              <div class="rating">
-                <span class="default">★★★★★</span>
-                <span class="active">★★★★★</span>
-              </div>
-            </div>
-            <a href="#" onclick="return false;" class="buy">Add to cart</a>
-          </div>
-          <div class="sec-4-card product-card">
-            <p class="badge">Vegetable</p>
-            <div class="photo">
-              <img src="./assets/images/product-photo-1.png">
-            </div>
-            <p class="title">Calabrese Broccoli</p>
-            <div class="info df align-e justify-b">
-              <p class="price">
-                <span class="full">$20.00</span>
-                <span class="discount">$13.00</span>
-              </p>
-              <div class="rating">
-                <span class="default">★★★★★</span>
-                <span class="active">★★★★★</span>
-              </div>
-            </div>
-            <a href="#" onclick="return false;" class="buy">Add to cart</a>
-          </div>
-          <div class="sec-4-card product-card">
-            <p class="badge">Vegetable</p>
-            <div class="photo">
-              <img src="./assets/images/product-photo-1.png">
-            </div>
-            <p class="title">Calabrese Broccoli</p>
-            <div class="info df align-e justify-b">
-              <p class="price">
-                <span class="full">$20.00</span>
-                <span class="discount">$13.00</span>
-              </p>
-              <div class="rating">
-                <span class="default">★★★★★</span>
-                <span class="active">★★★★★</span>
-              </div>
-            </div>
-            <a href="#" onclick="return false;" class="buy">Add to cart</a>
-          </div>
-          <div class="sec-4-card product-card">
-            <p class="badge">Vegetable</p>
-            <div class="photo">
-              <img src="./assets/images/product-photo-1.png">
-            </div>
-            <p class="title">Calabrese Broccoli</p>
-            <div class="info df align-e justify-b">
-              <p class="price">
-                <span class="full">$20.00</span>
-                <span class="discount">$13.00</span>
-              </p>
-              <div class="rating">
-                <span class="default">★★★★★</span>
-                <span class="active">★★★★★</span>
-              </div>
-            </div>
-            <a href="#" onclick="return false;" class="buy">Add to cart</a>
-          </div>
         </div>
         <button class="df align-c call-to-action-link" id="load-more-cards">
           <span>Load More</span>
@@ -527,83 +261,10 @@
             <img src="./assets/images/arrow.svg" alt="Explore Now">
           </a>
         </div>
-        <div class="sec-6-cards product-cards">
-          <div class="sec-6-card product-card">
-            <p class="badge">Vegetable</p>
-            <div class="photo">
-              <img src="./assets/images/product-photo-1.png">
-            </div>
-            <p class="title">Calabrese Broccoli</p>
-            <div class="info df align-e justify-b">
-              <p class="price">
-                <span class="full">$20.00</span>
-                <span class="discount">$13.00</span>
-              </p>
-              <div class="rating">
-                <span class="default">★★★★★</span>
-                <span class="active">★★★★★</span>
-              </div>
-            </div>
-            <a href="#" onclick="return false;" class="buy">Add to cart</a>
-          </div>
-          <div class="sec-6-card product-card">
-            <p class="badge">Vegetable</p>
-            <div class="photo">
-              <img src="./assets/images/product-photo-1.png">
-            </div>
-            <p class="title">Calabrese Broccoli</p>
-            <div class="info df align-e justify-b">
-              <p class="price">
-                <span class="full">$20.00</span>
-                <span class="discount">$13.00</span>
-              </p>
-              <div class="rating">
-                <span class="default">★★★★★</span>
-                <span class="active">★★★★★</span>
-              </div>
-            </div>
-            <a href="#" onclick="return false;" class="buy">Add to cart</a>
-          </div>
-          <div class="sec-6-card product-card">
-            <p class="badge">Vegetable</p>
-            <div class="photo">
-              <img src="./assets/images/product-photo-1.png">
-            </div>
-            <p class="title">Calabrese Broccoli</p>
-            <div class="info df align-e justify-b">
-              <p class="price">
-                <span class="full">$20.00</span>
-                <span class="discount">$13.00</span>
-              </p>
-              <div class="rating">
-                <span class="default">★★★★★</span>
-                <span class="active">★★★★★</span>
-              </div>
-            </div>
-            <a href="#" onclick="return false;" class="buy">Add to cart</a>
-          </div>
-          <div class="sec-6-card product-card">
-            <p class="badge">Vegetable</p>
-            <div class="photo">
-              <img src="./assets/images/product-photo-1.png">
-            </div>
-            <p class="title">Calabrese Broccoli</p>
-            <div class="info df align-e justify-b">
-              <p class="price">
-                <span class="full">$20.00</span>
-                <span class="discount">$13.00</span>
-              </p>
-              <div class="rating">
-                <span class="default">★★★★★</span>
-                <span class="active">★★★★★</span>
-              </div>
-            </div>
-            <a href="#" onclick="return false;" class="buy">Add to cart</a>
-          </div>
-        </div>
+        <div class="sec-6-cards product-cards"></div>
       </div>
     </section>
-    <section class="sec-7">
+    <section class="sec-7" id="projects">
       <div class="sec-7-photo">
         <img src="./assets/images/sec-7-img.png" alt="Eco Friendly">
       </div>
@@ -636,7 +297,7 @@
       </div>
     </section>
 
-    <section class="sec-8 vertical-paddings">
+    <section class="sec-8 vertical-paddings" id="news">
       <div class="container">
         <h3 class="yellowtail-text green-text sec-subtitle">News</h3>
         <h2 class="sec-title">Discover weekly content about organic food, & more</h2>
@@ -746,6 +407,13 @@
           </p>
         </div>
       </article>
+      <article class="modal" id="cart-modal">
+        <button class="modal-close-btn"><span></span><span></span></button>
+        <div class="modal-content">
+          <h3>The contents of your shopping cart</h3>
+          <ul></ul>
+        </div>
+      </article>
     </section>
 
   </main>
@@ -776,6 +444,9 @@
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.6.0/glide.min.js"
     integrity="sha512-2sI5N95oT62ughlApCe/8zL9bQAXKsPPtZZI2KE3dznuZ8HpE2gTMHYzyVN7OoSPJCM1k9ZkhcCo3FvOirIr2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/awesome-notifications/3.1.3/index.var.min.js"
+    integrity="sha512-eLF/cSp150FUkceFErOpCvz51bVFwGUQLRlm5ic89DwxMnzj47uHsOYF4gQSdwBpu7bjN/bV8fV76Dhha9TWlQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="./build/js/app.min.js"></script>
 </body>

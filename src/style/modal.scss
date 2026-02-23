@@ -97,6 +97,32 @@
       }
     }
 
+    &#cart-modal {
+
+      ul {
+        li {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 12px 0;
+          border-bottom: solid 1px $text-color;
+
+          &:last-child {
+            border-bottom: none;
+          }
+
+          i {
+            cursor: pointer;
+            transition: all 0.2s linear;
+
+            &:hover {
+              transform: scale(1.2);
+            }
+          }
+        }
+      }
+    }
+
     @include onSmallDesktop {
       padding: 25px;
 

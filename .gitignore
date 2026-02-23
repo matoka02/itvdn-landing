@@ -8,7 +8,10 @@
 
 # compiled files
 *.css.map
+*.min.css.map
+*.js
 *.js.map
+*.min.js.map
 
 # Runtime data
 pids

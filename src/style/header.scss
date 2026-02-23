@@ -212,7 +212,21 @@ header {
       }
 
       .cart {
-        display: none;
+        // display: none;
+        
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: $white-color;
+        z-index: 2;
+
+        .cart-icon {
+          margin-right: 0;
+        }
+
+        p {
+          display: none;
+        }
       }
     }
   }
