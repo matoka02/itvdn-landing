@@ -324,6 +324,15 @@ document.addEventListener("DOMContentLoaded", function () {
     };
   }
 
+  window.addEventListener(
+    "resize",
+    debounce(() => {
+      visibleCards = getVisibleCardValue();
+      activeVisibleCards = visibleCards;
+      cardToOpen = visibleCards / 2;
+    }, 200),
+  );
+
   function showCards() {
     const remainingCards = productCards.length - activeVisibleCards;
     const cardsToShow = Math.min(cardToOpen, remainingCards);
@@ -361,15 +370,6 @@ document.addEventListener("DOMContentLoaded", function () {
       behavior: "smooth",
     });
   }
-
-  window.addEventListener(
-    "resize",
-    debounce(() => {
-      visibleCards = getVisibleCardValue();
-      activeVisibleCards = visibleCards;
-      cardToOpen = visibleCards / 2;
-    }, 200),
-  );
 
   loadMoreProductCards.addEventListener("click", function () {
     if (activeVisibleCards < productCards.length) {
@@ -411,6 +411,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const formBtn = document.getElementById("form-submit");
   const emailField = document.getElementById("email-input");
 
+  const notifier = new AWN({
+    position: "top-right",
+    maxNotifications: 3,
+  });
+
   formBtn.addEventListener("click", function (event) {
     event.preventDefault();
 
@@ -423,6 +428,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
       emailField.value = ""; //clear form after submiting
     } else {
+      notifier.alert("Please type correct email address!");
       console.log("Please type correct email address!");
     }
   });
